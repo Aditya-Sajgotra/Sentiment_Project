@@ -3,4 +3,4 @@ install:
 lint:
 	pylint app/app.py
 test:
-	python -n pytest tests/test_working.py
+	python -m pytest tests/test_working.py
