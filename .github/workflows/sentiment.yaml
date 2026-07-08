@@ -18,4 +18,12 @@ jobs:
         run: make lint
 
       - name: test
+        env:
+          PYTHONPATH: .
+          DB_DRIVER: ${{ secrets.DB_DRIVER }}
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_DATABASE: ${{ secrets.DB_DATABASE }}
         run: make test
