@@ -1,0 +1,10 @@
+torch 
+sqlalchemy
+fastapi
+pydantic
+transformers
+pytest
+pylint
+python-dotenv
+psycopg2
+uvicorn
