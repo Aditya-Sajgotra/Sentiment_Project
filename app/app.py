@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from db.main import input_data
-from model_func.predict import predict, MODEL_VERSION, get_model
+from model_func.predict import predict, MODEL_VERSION,model
 
 app = FastAPI()
 
@@ -38,7 +38,6 @@ def get_response(data: Input) -> JSONResponse:
 @app.get("/health")
 def check_health() -> JSONResponse:
     """Mehtod for checking health of the model or website"""
-    model = get_model()
     return JSONResponse(
         status_code=200,
         content={"model version": MODEL_VERSION, "is model loaded": model is not None},
