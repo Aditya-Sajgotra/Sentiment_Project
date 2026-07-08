@@ -1,6 +1,6 @@
-name : Sentiment-Project
+name: Sentiment-Project
 
-on : [push]
+on: [push]
 
 jobs:
   builds:
@@ -9,11 +9,11 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v4
 
-      - name: install 
-        uses: make install
+      - name: install
+        run: make install
 
       - name: lint
-        uses: make lint
+        run: make lint
 
       - name: test
-        uses: make test
+        run: make test
