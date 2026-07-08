@@ -55,4 +55,4 @@ def input_data(**kwargs):
 
 # input_data(input="Im sad", sentiment_output="Negative", confidence=99.87462)
 
-# Base.metadata.create_all(engine) # first time creation
+Base.metadata.create_all(engine) # first time creation
