@@ -9,7 +9,7 @@ st.title("📊 Sentiment Analysis Dashboard")
 st.markdown("Enter a text phrase below to analyze its sentiment value.")
 
 # FastAPI endpoint configuration
-FASTAPI_URL = "https://backend-production-7e6cc.up.railway.app"  # Change '/predict' to your exact route path
+FASTAPI_URL = "https://backend-production-7e6cc.up.railway.app/predict"  # Change '/predict' to your exact route path
 
 # User Input Form
 with st.form(key="sentiment_form"):
