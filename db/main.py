@@ -1,4 +1,5 @@
 from sqlalchemy import create_engine, Table, Integer, String, Float, MetaData, Column
+import os
 from sqlalchemy.orm import (
     declarative_base,
     Session,
@@ -55,4 +56,5 @@ def input_data(**kwargs):
 
 # input_data(input="Im sad", sentiment_output="Negative", confidence=99.87462)
 
-Base.metadata.create_all(engine) # first time creation
+if __name__ == "__main__" or os.getenv("RAILWAY_ENVIRONMENT"):
+    Base.metadata.create_all(engine)
