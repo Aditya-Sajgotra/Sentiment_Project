@@ -1,0 +1,19 @@
+name : Sentiment-Project
+
+on : [push]
+
+jobs:
+  builds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: install 
+        uses: make install
+
+      - name: lint
+        uses: make lint
+
+      - name: test
+        uses: make test
