@@ -8,6 +8,7 @@ from db.main import input_data
 from model_func.predict import predict,MODEL_VERSION,get_model
 
 
+
 app = FastAPI()
 
 

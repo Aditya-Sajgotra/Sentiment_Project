@@ -1,10 +1,10 @@
 import pytest
 import unittest.mock as mock
 import json
-import db.main
-import model_func.predict
+import app.db.main
+import app.model_func.predict
 from app.app import Input, get_response,check_health
-from db.main import input_data,Data,metadata,Base,engine
+from app.db.main import input_data,Data,metadata,Base,engine
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from pydantic import ValidationError
@@ -35,7 +35,7 @@ def test_check_health():
     
 def test_input_data():
     test_engine = create_engine("sqlite:///:memory:")
-    db.main.engine = test_engine
+    app.db.main.engine = test_engine
     
     Base.metadata.create_all(test_engine)
     
