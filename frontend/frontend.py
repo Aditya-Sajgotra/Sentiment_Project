@@ -27,7 +27,7 @@ if submit_button:
                 payload = {"input": user_text}
                 
                 # Make HTTP POST request to your FastAPI backend
-                response = requests.post(FASTAPI_URL, json=payload, timeout=10)
+                response = requests.post(FASTAPI_URL, json=payload, timeout=60)
                 
                 if response.status_code == 200:
                     st.success("🎉 Analysis Successful!")
