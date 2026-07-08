@@ -7,4 +7,4 @@ MODEL_VERSION = "1.0.0"
 
 
 def predict(text: str) -> dict:
-    return model(text)[0]
+    return model(text)
