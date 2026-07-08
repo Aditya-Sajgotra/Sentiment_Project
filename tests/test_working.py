@@ -2,7 +2,7 @@ import pytest
 import unittest.mock as mock
 import json
 import app.db.main
-import app.model_func.predict
+import app.model_func as model_func
 from app.app import Input, get_response,check_health
 from app.db.main import input_data,Data,metadata,Base,engine
 from sqlalchemy import create_engine
