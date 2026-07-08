@@ -13,6 +13,8 @@ jobs:
         run: make install
 
       - name: lint
+        env:
+          PYTHONPATH: .
         run: make lint
 
       - name: test

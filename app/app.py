@@ -1,7 +1,9 @@
+"""Sentimenat Analysis with fastapi postgres and data validation"""
+
+from typing import Annotated, Optional
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
-from typing import Annotated, Optional
 from db.main import input_data
 from model_func.predict import predict,MODEL_VERSION,model
 
