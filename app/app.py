@@ -3,9 +3,9 @@
 from typing import Annotated, Optional
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel, Field,field_validator
+from pydantic import BaseModel, Field, field_validator
 from db.main import input_data
-from model_func.predict import predict, MODEL_VERSION,model
+from model_func.predict import predict, MODEL_VERSION, model
 
 app = FastAPI()
 
@@ -20,13 +20,14 @@ class Input(BaseModel):
     input: Annotated[
         str, Field(..., description="Input text to be analysed", max_length=100)
     ]
+
     @field_validator("input")
     @classmethod
-    def check_input(cls,value):
+    def check_input(cls, value):
+        """Function to check if input is a digit"""
         if value.isdigit():
             raise ValueError("Input can't be A integer")
         return value
-    
 
 
 @app.post("/predict")
